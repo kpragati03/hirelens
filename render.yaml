@@ -1,0 +1,29 @@
+# HireLens — Render Blueprint (backend web service)
+# Deploy from the Render dashboard: New → Blueprint → connect this repo.
+# Render reads this file, creates the service below, and deploys backend/.
+# The frontend is deployed separately on Vercel (see README).
+services:
+  - type: web
+    name: hirelens-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        sync: false
+    # NOTE: Render sets PORT automatically — do not set it here.
+    # Set FRONTEND_URL in the Render dashboard to your live Vercel URL
+    # (e.g. https://hirelens.vercel.app) so CORS allows the frontend.
+    # Then set VITE_API_URL on Vercel to https://hirelens-backend.onrender.com/api

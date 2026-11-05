@@ -1,0 +1,45 @@
+:root { --navy: #0f2a44; --navy2: #163a5c; --accent: #1e5aa8; --bg: #f4f6f9; --card: #fff; --text: #1a2433; --muted: #5b6b7f; --border: #dbe3ec; --green: #15803d; --amber: #b45309; --red: #b91c1c; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+a { color: var(--accent); }
+button { cursor: pointer; }
+.header { background: var(--navy); color: #fff; padding: 16px 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.header h1 { margin: 0; font-size: 22px; letter-spacing: .3px; }
+.header h1 span { color: #7db4e8; }
+.header p { margin: 2px 0 0; color: #b9c9da; font-size: 13px; }
+.role-switch { display: flex; gap: 6px; align-items: center; font-size: 13px; }
+.role-switch button { border: 1px solid #3a5a7d; background: transparent; color: #dbe7f3; padding: 6px 12px; border-radius: 999px; }
+.role-switch button.active { background: #fff; color: var(--navy); font-weight: 700; }
+.tabs { display: flex; gap: 4px; padding: 10px 24px 0; background: #fff; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.tabs button { border: none; background: none; padding: 10px 14px; font-size: 14px; color: var(--muted); border-bottom: 3px solid transparent; white-space: nowrap; }
+.tabs button.active { color: var(--navy); font-weight: 700; border-bottom-color: var(--accent); }
+.main { max-width: 1100px; margin: 0 auto; padding: 20px 24px 48px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+.card h2, .card h3 { margin-top: 0; color: var(--navy); }
+.muted { color: var(--muted); font-size: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.stat b { font-size: 28px; color: var(--navy); display: block; }
+.stat span { color: var(--muted); font-size: 13px; }
+.btn { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 9px 16px; font-size: 14px; }
+.btn.secondary { background: #e8eef5; color: var(--navy); }
+.btn.danger { background: #fde8e8; color: var(--red); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+input, select, textarea { width: 100%; padding: 9px 10px; border: 1px solid var(--border); border-radius: 8px; font: inherit; margin: 4px 0 10px; background: #fff; }
+label { font-size: 13px; font-weight: 600; color: var(--navy); }
+textarea { resize: vertical; }
+textarea.code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; min-height: 220px; }
+.chip { display: inline-block; background: #e8eef5; color: var(--navy); border-radius: 999px; padding: 3px 10px; font-size: 12px; margin: 2px 4px 2px 0; }
+.score { font-weight: 800; color: var(--green); }
+.job { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: flex-start; }
+.kanban { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.kanban-col { background: #eef2f7; border-radius: 12px; padding: 10px; min-height: 120px; }
+.kanban-col h4 { margin: 4px 4px 10px; color: var(--navy); font-size: 13px; text-transform: uppercase; letter-spacing: .5px; }
+.kanban-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 10px; margin-bottom: 8px; font-size: 14px; }
+.kanban-card select { margin: 8px 0 0; }
+.error { background: #fde8e8; color: var(--red); border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; font-size: 14px; }
+.success { background: #dcfce7; color: var(--green); border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; font-size: 14px; }
+.timer { font-size: 20px; font-weight: 800; color: var(--navy); }
+.timer.low { color: var(--red); }
+pre.results { background: #0f2a44; color: #dbe7f3; padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 13px; }
+@media (max-width: 640px) { .header, .tabs, .main { padding-left: 14px; padding-right: 14px; } }
